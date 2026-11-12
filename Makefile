@@ -24,7 +24,7 @@ ifeq ($(VERSION),7.1)
   IDO_LIBS    :=
 else ifeq ($(VERSION),5.3)
   IDO_VERSION := IDO53
-  IDO_TC      := cc strip acpp as0 as1 cfe copt ugen ujoin uld umerge uopt usplit ld upas c++filt
+  IDO_TC      := cc strip acpp as0 as1 cfe copt ugen ujoin uld umerge uopt usplit ld upas c++filt edgcpfe NCC
   IDO_LIBS    := crt1.o crtn.o libc.so libc.so.1 libexc.so libgen.so libm.so
 else ifeq ($(VERSION),6.2)
   IDO_VERSION := IDO62
@@ -234,6 +234,8 @@ $(BUILT_BIN)/%.so.1: $(IRIX_USR_DIR)/lib/%.so.1
 $(BUILD_BASE)/7.1/out/NCC: $(BUILD_BASE)/7.1/out/cc
 	cp $^ $@
 
+$(BUILD_BASE)/5.3/out/NCC: $(BUILD_BASE)/5.3/out/cc
+	cp $^ $@
 
 # Template to compile libc_impl and output binaries
 # $(1): target name (or "default" if it's the only target)

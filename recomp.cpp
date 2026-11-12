@@ -865,8 +865,8 @@ void pass1(void) {
                                     num_cases = 6;
                                 }
                             }
+                            // Special hard cases in edgcpfe where the initial sltiu is in another basic block
                         } else if (i == 208684) {
-                            // Special hard case in edgcpfe where the initial sltiu is in another basic block
                             if ((lw == 208681) && (addu_index == 208680)) {
                                 // few extra checks to try to ensure we are in edgcpfe
                                 if ((insns[lw].instruction.getRaw() == 0x8C2B227C) &&
@@ -875,7 +875,6 @@ void pass1(void) {
                                     num_cases = 8;
                                 }
                             }
-                            // special case in 6.2 edgcpfe where the initial sltiu is in another basic block
                         } else if (i == 34323) {
                             if ((lw == 34321) && (addu_index == 34320)) {
                                 // few extra checks to try to ensure we are in 6.2 edgcpfe
@@ -883,6 +882,24 @@ void pass1(void) {
                                     (insns[addu_index].instruction.getRaw() == 0x380821)) {
                                     found = true;
                                     num_cases = 6;
+                                }
+                            }
+                        } else if (i == 37544) {
+                            if ((lw == 37541) && (addu_index == 37540)) {
+                                // few extra checks to try to ensure we are in 5.3 edgcpfe
+                                if ((insns[lw].instruction.getRaw() == 0x8C392FD0) &&
+                                    (insns[addu_index].instruction.getRaw() == 0x390821)) {
+                                    found = true;
+                                    num_cases = 6;
+                                }
+                            }
+                        } else if (i == 208178) {
+                            if ((lw == 208175) && (addu_index == 208174)) {
+                                // few extra checks to try to ensure we are in 5.3 edgcpfe
+                                if ((insns[lw].instruction.getRaw() == 0x8C2BE11C) &&
+                                    (insns[addu_index].instruction.getRaw() == 0x2B0821)) {
+                                    found = true;
+                                    num_cases = 8;
                                 }
                             }
                         }
