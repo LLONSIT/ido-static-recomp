@@ -204,6 +204,7 @@ int32_t wrapper_semctl(uint8_t *mem, int32_t semid, int32_t semnum, int32_t cmd,
 int32_t wrapper_msgctl(uint8_t *mem, int32_t msqid, int32_t cmd, uint32_t sp);
 int32_t wrapper_msgsnd(uint8_t *mem, int32_t msqid, uint32_t msgp, uint32_t msgz, int32_t msgflg);
 int32_t wrapper_msgrcv(uint8_t *mem, int32_t msqid, uint32_t msgp, uint32_t msgz, int32_t msgtyp, int32_t msgflg);
+
 // C++ functions
 uint32_t wrapper___nw__FUi(uint8_t *mem, uint32_t size);
 void wrapper___dl__FPv(uint8_t *mem, uint32_t data_addr);
