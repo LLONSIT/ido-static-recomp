@@ -164,7 +164,6 @@ LIBC_IMPL     := libc_impl_$(subst .,,$(VERSION))
 
 # edgcpfe 7.1 uses libc 5.3
 %/7.1/out/edgcpfe:: LIBC_IMPL := libc_impl_53
-%/6.2/out/edgcpfe:: LIBC_IMPL := libc_impl_62
 
 #### Main Targets ###
 
